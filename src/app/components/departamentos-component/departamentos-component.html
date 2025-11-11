@@ -15,6 +15,13 @@
                 <td>{{departamento.numero}}</td>
                 <td>{{departamento.nombre}}</td>
                 <td>{{departamento.localidad}}</td>
+                <td>
+                    <a [routerLink]="['/detalles', departamento.numero,departamento.nombre,departamento.localidad]"
+                        class="btn btn-info">Detalles</a>
+                </td>
+                <td>
+                    <a [routerLink]="['/update']" class="btn btn-warning">Actualizar</a>
+                </td>
             </tr>
             }
         </tbody>

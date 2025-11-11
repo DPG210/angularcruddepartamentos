@@ -23,4 +23,20 @@ export class ServiceDepartamentos{
         header=header.set("Content-type","application/json");
         return this._http.post(url,json,{headers:header});
     }
+    getDepartamento(id:string):Observable<Departamento>{
+        let request="api/departamentos";
+        let url= environment.apiDepartamentos+request
+        return this._http.get<Departamento>(url);
+    }
+    updateDepartamento(departamento:Departamento):Observable<any>{
+        //IGUAL QUE EN REACT O JQUERY
+        let request="api/departamentos";
+        let url= environment.apiDepartamentos+request;
+        let json=JSON.stringify(departamento)
+        //CREAMOS LA CABECERA
+        let header= new HttpHeaders();
+        //INDICAMOS EL TIPO DE OBJETO A ENVIAR EN DATA
+        header=header.set("Content-type","application/json");
+        return this._http.post(url,json,{headers:header});
+    }
 }

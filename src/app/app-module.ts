@@ -9,13 +9,17 @@ import { CrearDepartamento } from './components/crear-departamento/crear-departa
 import { FormsModule } from '@angular/forms';
 import { provideHttpClient } from '@angular/common/http';
 import { ServiceDepartamentos } from './services/service.departamentos';
+import { UpdateDepartamento } from './components/update-departamento/update-departamento';
+import { DetallesDepartamento } from './components/detalles-departamento/detalles-departamento';
 
 @NgModule({
   declarations: [
     App,
     DepartamentosComponent,
     MenuComponents,
-    CrearDepartamento
+    CrearDepartamento,
+    UpdateDepartamento,
+    DetallesDepartamento
   ],
   imports: [
     BrowserModule,
