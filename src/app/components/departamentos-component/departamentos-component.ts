@@ -13,10 +13,20 @@ export class DepartamentosComponent implements OnInit{
 
   constructor (private _service: ServiceDepartamentos){}
 
-  ngOnInit(): void {
+  loadDepartamentos():void{
     this._service.getDepartamentos().subscribe(response=>{
       this.departamentos=response;
     })
   }
+
+  ngOnInit(): void {
+    this.loadDepartamentos();
+  }
   
+  deleteDepartamento(id:number):void{
+    this._service.deleteDepartamento(id).subscribe(response=>{
+      console.log("Delete");
+      this.loadDepartamentos();
+    })
+  }
 }

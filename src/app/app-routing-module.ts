@@ -9,7 +9,7 @@ import { DetallesDepartamento } from './components/detalles-departamento/detalle
 const routes: Routes = [
   {path:"", component:DepartamentosComponent},
   {path:"crear", component:CrearDepartamento},
-  {path:"update", component:UpdateDepartamento},
+  {path:"update/:id", component:UpdateDepartamento},
   {path:"detalles/:id/:nombre/:localidad", component:DetallesDepartamento}
 ];
 

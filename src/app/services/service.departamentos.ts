@@ -23,8 +23,8 @@ export class ServiceDepartamentos{
         header=header.set("Content-type","application/json");
         return this._http.post(url,json,{headers:header});
     }
-    getDepartamento(id:string):Observable<Departamento>{
-        let request="api/departamentos";
+    getDepartamento(id:number):Observable<Departamento>{
+        let request="api/departamentos/"+id;
         let url= environment.apiDepartamentos+request
         return this._http.get<Departamento>(url);
     }
@@ -34,9 +34,13 @@ export class ServiceDepartamentos{
         let url= environment.apiDepartamentos+request;
         let json=JSON.stringify(departamento)
         //CREAMOS LA CABECERA
-        let header= new HttpHeaders();
+        let header= new HttpHeaders().set("Content-type","application/json");
         //INDICAMOS EL TIPO DE OBJETO A ENVIAR EN DATA
-        header=header.set("Content-type","application/json");
         return this._http.post(url,json,{headers:header});
+    }
+    deleteDepartamento(idDepartamento:number):Observable<any>{
+        let request="api/departamentos/"+idDepartamento;
+        let url= environment.apiDepartamentos+request;
+        return this._http.delete(url);
     }
 }

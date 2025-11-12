@@ -1,12 +1,15 @@
 <div>
     <h1>Actualizar</h1>
-    <!-- <form #crearForm="ngForm">
-        <label for="">Numero</label><br>
-        <input type="text" #cajaid name="cajaid"><br>
+    <a [routerLink]="['/']">Home</a>
+    @if(departamento){
+        <form #updateForm="ngForm">
+        <label for="">Id</label><br>
+        <input type="text" #cajaid name="cajaid" value={{departamento.numero}} disabled><br>
         <label for="">Nombre</label><br>
-        <input type="text" #cajanombre name="cajanombre"><br>
+        <input type="text" #cajanombre name="cajanombre" value={{departamento.nombre}}><br>
         <label for="">Localidad</label><br>
-        <input type="text" #cajalocalidad name="cajalocalidad"><br>
-        <button (click)="updateDepartamento()">Crear</button>
-    </form> -->
+        <input type="text" #cajalocalidad name="cajalocalidad" value={{departamento.localidad}}><br>
+        <button (click)="updateDepartamento()">Actualizar</button>
+    </form>
+    }
 </div>

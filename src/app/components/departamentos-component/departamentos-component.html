@@ -20,7 +20,10 @@
                         class="btn btn-info">Detalles</a>
                 </td>
                 <td>
-                    <a [routerLink]="['/update']" class="btn btn-warning">Actualizar</a>
+                    <a [routerLink]="['/update', departamento.numero]" class="btn btn-warning">Actualizar</a>
+                </td>
+                <td>
+                    <button (click)="deleteDepartamento(departamento.numero)">Delete</button>
                 </td>
             </tr>
             }
